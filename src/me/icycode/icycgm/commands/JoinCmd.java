@@ -1,6 +1,6 @@
 package me.icycode.icycgm.commands;
 
-import me.icycode.icycgm.utils.Messages;
+import net.md_5.bungee.api.ChatColor;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -21,7 +21,7 @@ public class JoinCmd implements CommandExecutor {
 		
 		//Todo: Checks for whether player is in game or can join.
 		
-		Messages.JOINTEAM.send(player);
+		player.sendMessage(ChatColor.DARK_GRAY + "You have joined " + ChatColor.YELLOW + "TEAM" + ChatColor.DARK_GRAY + ".");
 		
 		return false;
 	}

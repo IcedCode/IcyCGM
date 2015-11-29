@@ -8,6 +8,7 @@ import me.icycode.icycgm.listeners.PlayerJoin;
 import me.icycode.icycgm.listeners.PlayerPickupItem;
 import me.icycode.icycgm.listeners.PlayerQuit;
 import me.icycode.icycgm.listeners.ServerListener;
+import me.icycode.icycgm.match.GameState;
 import me.icycode.icycgm.modules.gamemodes.GamemodeType;
 
 import org.bukkit.Bukkit;
@@ -17,12 +18,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin{
 	
 	public static GamemodeType activeGamemode;
+	public static GameState gameState;
 	
 	@Override
 	public void onEnable() {
 		registerListeners();
 		
 		getCommand("join").setExecutor(new JoinCmd());
+		
+		gameState = GameState.IN_LOBBY;
+		
 	}
 	
 	
